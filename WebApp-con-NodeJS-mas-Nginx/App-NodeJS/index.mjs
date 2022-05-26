@@ -1,4 +1,4 @@
-import fetch from 'fetch';
+import fetch from 'node-fetch';
 import express from 'express';
 import os from 'os';
 
@@ -9,7 +9,7 @@ const app = express();
 const el_hostname = os.hostname();
 
 app.get('/', (req, res) => {
-    res.send(`VERSION 4: Hola Londres, desde el servidor llamado ${el_hostname}`);
+    res.send(`VERSION 4: Hola Tokyo, desde el servidor llamado ${el_hostname}`);
 });
 
 app.get('/miwebnginx', async (req, res) => {
