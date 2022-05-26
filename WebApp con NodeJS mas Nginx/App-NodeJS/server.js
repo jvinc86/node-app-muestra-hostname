@@ -10,7 +10,7 @@ const app = express();
 const el_hostname = os.hostname();
 
 app.get('/', (req, res) => {
-    res.send(`VERSION 3: Hola Caracas, desde el servidor llamado ${el_hostname}`);
+    res.send(`VERSION 4: Hola Londres, desde el servidor llamado ${el_hostname}`);
 });
 
 app.get('/miwebnginx', async (req, res) => {
