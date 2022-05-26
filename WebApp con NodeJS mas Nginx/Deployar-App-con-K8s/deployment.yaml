@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: proyecto-piratasweb
+  namespace: default
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: piratasweb
+  template:
+    metadata:
+      labels:
+        app: piratasweb
+    spec:
+      containers:
+        - name: contenedor-piratasweb
+          image: vincenup/superaplicacion:v1
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
+          ports:
+            - containerPort: 3000
