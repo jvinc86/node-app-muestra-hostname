@@ -8,6 +8,7 @@ const HOST = '0.0.0.0';
 
 const app = express();
 const el_hostname = os.hostname();
+
 app.get('/', (req, res) => {
     res.send(`VERSION 3: Hola Caracas, desde el servidor llamado ${el_hostname}`);
 });
