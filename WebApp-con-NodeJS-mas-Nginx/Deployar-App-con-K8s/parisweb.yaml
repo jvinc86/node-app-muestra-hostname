@@ -1,7 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: proyecto-parisweb
+spec:
+  type: LoadBalancer
+  selector:
+    app: parisweb
+  ports:
+    - port: 8787
+      targetPort: 3000
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: proyecto-piratasweb
+  name: proyecto-parisweb
   namespace: default
 spec:
   replicas: 3
@@ -9,30 +21,18 @@ spec:
     type: RollingUpdate
   selector:
     matchLabels:
-      app: piratasweb
+      app: parisweb
   template:
     metadata:
       labels:
-        app: piratasweb
+        app: parisweb
     spec:
       containers:
-        - name: contenedor-piratasweb
-          image: vincenup/superaplicacion:v1
+        - name: contenedor-parisweb
+          image: vincenup/mi-app-nodejs-nginx:v1
           resources:
             limits:
               memory: "128Mi"
               cpu: "250m"
           ports:
             - containerPort: 3000
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: proyecto-piratasweb
-spec:
-  type: LoadBalancer
-  selector:
-    app: piratasweb
-  ports:
-    - port: 8787
-      targetPort: 3000
