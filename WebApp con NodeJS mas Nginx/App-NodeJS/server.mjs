@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+import fetch from 'fetch';
 import express from 'express';
 import os from 'os';
 
