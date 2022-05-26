@@ -1,7 +1,6 @@
-'use strict';
-
-const express = require('express');
-const os = require('os');
+import fetch from 'node-fetch';
+import express from 'express';
+import os from 'os';
 
 const PORT = 3000;
 const HOST = '0.0.0.0';
@@ -19,7 +18,6 @@ app.get('/miwebnginx', async (req, res) => {
     const body = await response.text();
     res.send(body);
 });
-
 
 app.listen(PORT, HOST);
 console.log(`🚀 Accede a la SUPER APP ingresando a 📲 http://localhost:${PORT}`);
