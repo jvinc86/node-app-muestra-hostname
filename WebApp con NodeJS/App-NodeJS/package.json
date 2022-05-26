@@ -1,0 +1,13 @@
+{
+  "name": "mi_super_web_app",
+  "version": "1.0.0",
+  "description": "Mi SUPER APP Node.js que muestra el nombre del server donde esta corriendo",
+  "author": "Vincent <vincent@devops.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
