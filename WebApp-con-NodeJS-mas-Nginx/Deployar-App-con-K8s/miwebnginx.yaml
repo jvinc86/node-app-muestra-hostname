@@ -12,7 +12,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: miwebnginx #Ojo este nombre lo colocamos en el index.msj (linea 16) de nuestra App, tienen que coincidir
+  name: miwebnginx
   namespace: default
 spec:
   replicas: 5
